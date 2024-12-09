@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Exponiere den Port, den deine App verwendet
-EXPOSE 10000
+EXPOSE 8080
 
 # Standardbefehl, um die Flask-App zu starten
 CMD ["python", "app.py"]
