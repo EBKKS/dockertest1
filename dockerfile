@@ -1,17 +1,18 @@
-# Basis-Image
+# Wähle ein Basis-Image
 FROM python:3.9-slim
 
-# Arbeitsverzeichnis setzen
+# Arbeitsverzeichnis im Container erstellen
 WORKDIR /app
 
-# Kopiere die Dateien ins Image
-COPY . /app
+# Kopiere die requirements.txt und installiere Abhängigkeiten
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Installiere Abhängigkeiten
-RUN pip install flask
+# Kopiere den gesamten Rest des Projekts
+COPY . .
 
-# Port freigeben
+# Exponiere den Port, den deine App verwendet
 EXPOSE 10000
 
-# Startbefehl
+# Standardbefehl, um die Flask-App zu starten
 CMD ["python", "app.py"]
