@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install flask
 
 # Port freigeben
-EXPOSE 5000
+EXPOSE 10000
 
 # Startbefehl
 CMD ["python", "app.py"]
